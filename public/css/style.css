@@ -1,0 +1,103 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sequels;
+}
+
+@font-face {
+    font-family: "sequels";
+    src: url(../fonts/sequel/Sequel_Demo.ttf);
+}
+
+:root {
+    --primary: #ddd;
+    --bg: rgb(14, 28, 38);
+    --bg-grad: linear-gradient(90deg, rgba(14, 28, 38, 1) 0%, rgba(42, 69, 75, 1) 35%, rgba(41, 72, 97, 1) 100%);
+    --bg-color2: rgba(42, 69, 75, 1);
+    --green: green;
+}
+
+body {
+    background: var(--bg);
+    background: -moz-linear-gradient(90deg, rgba(14, 28, 38, 1) 0%, rgba(42, 69, 75, 1) 35%, rgba(41, 72, 97, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(14, 28, 38, 1) 0%, rgba(42, 69, 75, 1) 35%, rgba(41, 72, 97, 1) 100%);
+    background: linear-gradient(90deg, rgba(14, 28, 38, 1) 0%, rgba(42, 69, 75, 1) 35%, rgba(41, 72, 97, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0e1c26", endColorstr="#294861", GradientType=1);
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: var(--bg) !important;
+    width: 50%;
+    height: 50%;
+    max-width: 500px;
+    flex: 1 0 300px;
+    padding: 2rem 1rem !important;
+    margin: 2rem 1rem !important;
+    opacity: 0.5;
+}
+
+.form-container label {
+    display: none;
+    color: #ddd;
+}
+
+.form-container input[type="text"],
+input[type="password"] {
+    font-family: 'Courier New', Courier, monospace;
+    color: transparent;
+    font-weight: light;
+    width: 100%;
+    height: 50px;
+    min-width: 250px;
+    flex-grow: 1 0 250px;
+    border: 2px solid var(--bg) !important;
+}
+
+.form-container input[type="button"] {
+    font-family: 'Courier New', Courier, monospace;
+    width: 50%;
+}
+
+.form-container h1 {
+    color: var(--bg-color2);
+}
+
+/* ACTIVE AND FOCUS EFFECT */
+.form-container input[type="text"]:active,
+input[type="password"]:active {
+    border: 2px solid red !important;
+}
+
+.form-container input[type="text"]:focus,
+input[type="password"]:focus {
+    border: 2px solid var(--green) !important;
+
+}
+
+/* ANIMATION AND HOVER EFFECT */
+.form-container {
+    /* the border color */
+    --b: 2px;
+    /* the border thickness*/
+    --g: 50px;
+    /* the gap on hover */
+
+    padding: calc(var(--g) + var(--b));
+    --_g: #0000 25%, #ddd 0;
+    background:
+        conic-gradient(from 180deg at top var(--b) right var(--b), var(--_g)) var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
+        conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0 var(--_i, 200%)/var(--_i, var(--b)) 200% no-repeat;
+    transition: .3s, background-position .3s .3s;
+    cursor: pointer;
+}
+
+.form-container:hover {
+    --_i: 100%;
+    transition: .3s, background-size .3s .3s;
+    opacity: 0.9;
+}
